@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use App\Http\Controllers\DbconecController;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -55,3 +57,11 @@ $router->post('/userpost', 'BlogController@userstore');
 $router->put('/userput', 'BlogController@userput');
 $router->patch('/userpatch', 'BlogController@userpatch');
 $router->delete('/userdelete', 'BlogController@userdelete');
+
+$router->get('/productlist', 'BlogController@productlist');
+$router->get('/product', 'BlogController@homepage');
+
+///Download response
+$router->get('/orderpdf', 'BlogController@order');
+
+$router->get('conection', 'DbconecController@index');
